@@ -1,4 +1,6 @@
-const Tarea = () => {
+const Tarea = ({tarea, setTarea, eliminarTarea}) => {
+
+  const {titulo, fecha, decripcion, id} = tarea;
   return (
     <div className="bg-white shadow-md px-5 py-10 rounded-lg mt-5">
       <p className="font-bold mb-3 text-gray-700 uppercase">
