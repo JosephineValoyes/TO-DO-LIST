@@ -1,6 +1,6 @@
 const Tarea = ({tarea, setTarea, eliminarTarea}) => {
 
-const {titulo, fecha, decripcion, id} = tarea;
+const {titulo, fecha, descripcion, id } = tarea;
 
 const handleEliminar = () => {
   const respuesta = confirm( "¿Estas seguro de eliminar esta tarea?🤔​");
@@ -12,14 +12,14 @@ const handleEliminar = () => {
   return (
     <div className="bg-white shadow-md px-5 py-10 rounded-lg mt-5">
       <p className="font-bold mb-3 text-gray-700 uppercase">
-        Titulo: <span className="font-normal normal-case">Titulo</span>
+        Titulo: <span className="font-normal normal-case">{titulo} </span>
       </p>
       <p className="font-bold mb-3 text-gray-700 uppercase">
-        Fecha: <span className="font-normal normal-case">Fecha</span>
+        Fecha: <span className="font-normal normal-case">{fecha} </span>
       </p>
       <p className="font-bold mb-3 text-gray-700 uppercase">
         Descripción:{" "}
-        <span className="font-normal normal-case">Descripción</span>
+        <span className="font-normal normal-case">{descripcion} </span>
       </p>
 
       <div className="flex justify-between">

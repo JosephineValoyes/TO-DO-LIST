@@ -14,7 +14,7 @@ const Form = ({tareas, setTareas, tarea, setTareas}) => {
       setFecha(tarea.fecha);
       setDescripcion(tarea.descripcion);
     }
-  },{tarea});
+  },[tarea]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,9 +30,27 @@ const Form = ({tareas, setTareas, tarea, setTareas}) => {
     const objetoTareas = {titulo, fecha, descripcion}
 
     if(tarea.id){
+      //Editando la tarea
 
+      objetoTareas.id = tarea.id;
+      const tareasActualizadas = tareas.map ((tareaState) =>
+      tareaState.id === tareas.id ? objetoTareas : tareaState
+      );
+
+      setTareas(tareasActualizadas);
+      setTarea({});
+
+    }else{
+      //nueva tarea
+      objetoTareas.id = genararId();
+      setTareas([...tareas, objetoTareas]);
     }
-  }
+    //LImpiar formulario
+    setTitulo("");
+    setFecha("");
+    setDescripcion("");
+
+  };
 
 
 

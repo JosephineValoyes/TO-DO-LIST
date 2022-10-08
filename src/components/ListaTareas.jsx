@@ -1,3 +1,4 @@
+
 const ListaTareas = ({tareas, setTarea, eliminarTarea}) => {
   return (
     <div className="md:w-1/2 lg:w-2/5 mx-5 mb-10 md:h-screen overflow-scroll">
@@ -16,14 +17,17 @@ const ListaTareas = ({tareas, setTarea, eliminarTarea}) => {
               setTarea={setTarea}
               eliminarTarea={eliminarTarea}
             />
-          );
+          )
         })}
       
       </>
-      ) : (  
-      <h2 className="font-black text-3xl text-center mb-10">
-        No tengo tareas pendientes
-      </h2>
+      ) : (
+        
+        
+        <h2 className="font-black text-3xl text-center mb-10">
+          No tengo tareas pendientes 
+        </h2>
+
       )}
     </div>
   );
